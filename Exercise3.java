@@ -1,45 +1,42 @@
 public class Main {
 
     public static void main(String[] args) {
-        int block[] = {1, 2, 3, 7, 5};
+
+        int array[] = {1, 2, 3, 7, 5};
         int indexMin = 0;
         int indexMax = 0;
-        int min = block[0];
-        int max = block[0];
+        int min = array[0];
+        int max = array[0];
         int sum = 0;
-        for (int i = 0; i < block.length; i++) {
-            System.out.println(block[i]);
-        }
-        System.out.println("...");
 
-        for (int i = 0; i < block.length; i++) {
-            if (block[i] < min) {
-                min = block[i];
+        System.out.println("My array:");
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+        for (int i = 0; i < array.length; i++) {
+
+            if (array[i] < min) {
+                min = array[i];
                 indexMin = i;
             }
-            if (block[i] > max) {
-                max = block[i];
+            if (array[i] > max) {
+                max = array[i];
                 indexMax = i;
             }
         }
-        System.out.println(min);
-        System.out.println("...");
-        System.out.println(max);
-        System.out.println("...");
+        System.out.println("Minimum: " + min);
+        System.out.println("Maximum: " + max);
 
         if (min < max) {
             for (int i = indexMin + 1; i < indexMax; i++) {
-                sum += block[i];
+                sum += array[i];
             }
-        }
-         else if (min > max) {
+        } else if (min > max) {
             for (int i = indexMax + 1; i < indexMin; i++) {
-                sum += block[i];
+                sum += array[i];
             }
         }
-        System.out.println(sum);
+        System.out.println("The sum between the minimum and maximum values: " + sum);
     }
 }
-
-
-
